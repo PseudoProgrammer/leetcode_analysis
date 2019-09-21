@@ -16,19 +16,4 @@
 左括号必须以正确的顺序闭合。
 注意空字符串可被认为是有效字符串。
 ### 答案
-class Solution {
-public:
-    bool isValid(string s) {
-        stack<char> sta;
-        for (size_t i = 0; i < s.size(); ++i){
-            if (!sta.empty() && ((sta.top() == '(' && s[i] == ')') ||(sta.top() == '[' && s[i] == ']') ||
-                                 (sta.top() == '{' && s[i] == '}')))sta.pop();
-            else sta.push(s[i]);
-        }
-        if (sta.size() == 0){
-            return true;
-        }else {
-            return false;
-        }
-    }
-};
+Q20 Valid Parentheses
