@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> sta;
+        for (size_t i = 0; i < s.size(); ++i){
+            if (!sta.empty() && ((sta.top() == '(' && s[i] == ')') ||(sta.top() == '[' && s[i] == ']') ||
+                                 (sta.top() == '{' && s[i] == '}')))sta.pop();
+            else sta.push(s[i]);
+        }
+        if (sta.size() == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+};
