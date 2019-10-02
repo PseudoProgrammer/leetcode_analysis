@@ -1,17 +1,9 @@
-
 #include <iostream>
 #include <stdlib.h>
 #include <malloc.h>
 #include <stack>
 #include <queue>
 using namespace std;
-
-//ypedef struct Node {
-//   char data;
-//   struct Node *lchild;
-//   struct Node *rchild;
-//} *Tree;
-//Tree 是一个node指针的类型定义
 typedef struct Node {
     char data;
     struct Node *lchild;
@@ -32,23 +24,7 @@ void treeNodeConstructor(Tree &root, char data[]){
         treeNodeConstructor(root->rchild, data);  //递归构建右子树
     }
 }
-//深度优先遍历
-void depthFirstSearch(Tree root){
-    stack<Node *> nodeStack;  //使用C++的STL标准模板库
-    nodeStack.push(root);
-    Node *node;
-    while(!nodeStack.empty()){
-        node = nodeStack.top();
-        cout<<node->data;//遍历根结点
-        nodeStack.pop();
-        if(node->rchild){
-            nodeStack.push(node->rchild);  //先将右子树压栈
-        }
-        if(node->lchild){
-            nodeStack.push(node->lchild);  //再将左子树压栈
-        }
-    }
-}
+
 void DFS(Tree root){
     stack<Node *> node_list;
     node_list.push(root);
@@ -63,23 +39,6 @@ void DFS(Tree root){
     }
 }
 
-//广度优先遍历
-//void breadthFirstSearch(Tree root){
-//    queue<Node *> nodeQueue;  //使用C++的STL标准模板库
-//    nodeQueue.push(root);
-//    Node *node;
-//    while(!nodeQueue.empty()){
-//        node = nodeQueue.front();
-//        nodeQueue.pop();
-//        cout<<node->data;//遍历根结点
-//        if(node->lchild){
-//            nodeQueue.push(node->lchild);  //先将左子树入队
-//        }
-//        if(node->rchild){
-//            nodeQueue.push(node->rchild);  //再将右子树入队
-//        }
-//    }
-//}
 
 void BFS(Tree root){
     //广度优先遍历, 使用队列
