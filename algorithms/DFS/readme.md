@@ -53,6 +53,6 @@ post_order_recursive: F
 post_order_recursive: G  
 post_order_recursive: C  
 post_order_recursive: A  
-所以，前序遍历其实就是深度优先遍历
+所以，前序遍历其实就是广度优先遍历
 # Leetcode
 ## 题
