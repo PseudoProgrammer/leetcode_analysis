@@ -10,7 +10,7 @@
 g++ tree.cc -o tree -std=c++11
 2. 执行
 ./tree
-3. 结果
+3. 结果  
 深度优先遍历二叉树结果: DFS: A  
 DFS: B  
 DFS: D  
