@@ -94,16 +94,57 @@ void BFS(Tree root){
     }
 }
 
+void pre_order_traverse(Tree root){
+    //广度优先遍历，递归方式
+    Tree top = root;
+    // firstly, root node
+    cout << "pre_order_recursive: " << top->data<<endl;
+    // secondly, left child
+    if(top->lchild)pre_order_traverse(top->lchild);
+    // thirdly, right child
+    if(top->rchild)pre_order_traverse(top->rchild);
+}
+
+void in_order_traverse(Tree root){
+    //广度优先遍历，递归方式
+    Tree top = root;
+    // firstly, left child
+    if(top->lchild)in_order_traverse(top->lchild);
+    // second, root node
+    cout << "in_order_recursive: " << top->data<<endl;
+    // thirdly, right child
+    if(top->rchild)in_order_traverse(top->rchild);
+}
+
+void post_order_traverse(Tree root){
+    //广度优先遍历，递归方式
+    Tree top = root;
+    // firstly, left child
+    if(top->lchild)post_order_traverse(top->lchild);
+    // second, right child
+    if(top->rchild)post_order_traverse(top->rchild);
+    // thirdly, root node
+    cout << "post_order_recursive: " << top->data<<endl;
+}
+
 int main() {
     //上图所示的二叉树先序遍历序列,其中用'#'表示结点无左子树或无右子树
     char data[15] = {'A', 'B', 'D', '#', '#', 'E', '#', '#', 'C', 'F','#', '#', 'G', '#', '#'};
     Tree tree;
     treeNodeConstructor(tree, data);
-    printf("深度优先遍历二叉树结果: ");
+    printf("深度优先遍历二叉树结果: \n");
     DFS(tree);
     //depthFirstSearch(tree);
-    printf("\n\n广度优先遍历二叉树结果: ");
+    printf("广度优先遍历二叉树结果: \n");
     BFS(tree);
+
+    printf("前序优先遍历二叉树结果（递归）:\n");
+    pre_order_traverse(tree);
+    printf("中序优先遍历二叉树结果（递归）:\n");
+    in_order_traverse(tree);
+    printf("后序优先遍历二叉树结果（递归）:\n");
+    post_order_traverse(tree);
+    printf("所以，前序遍历其实就是深度优先遍历\n");
     //breadthFirstSearch(tree);
     return 0;
 }
