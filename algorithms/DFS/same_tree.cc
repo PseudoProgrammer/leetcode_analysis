@@ -10,7 +10,7 @@
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        // 遍历知识点的考察，两棵树按照相同方式进行遍历比较，不同则返回false，遍历结束则返回true
+        // 树的遍历方式的知识点考察，两棵树按照相同方式进行遍历比较，不同则返回false，遍历结束则返回true
         // 本题采用前序遍历方式进行比较
         // 1, 先处理特殊情况，NULL变量没有val，left，right
         if (p == NULL && q != NULL)return false;
