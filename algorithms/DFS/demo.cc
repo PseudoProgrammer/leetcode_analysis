@@ -1,17 +1,23 @@
+
 #include <iostream>
 #include <stdlib.h>
 #include <malloc.h>
-#include <Stack>
-#include <Queue>
+#include <stack>
+#include <queue>
 using namespace std;
- 
+
+//ypedef struct Node {
+//   char data;
+//   struct Node *lchild;
+//   struct Node *rchild;
+//} *Tree;
+//Tree 是一个node指针的类型定义
 typedef struct Node {
     char data;
     struct Node *lchild;
     struct Node *rchild;
 } *Tree;
-//Tree 是一个node指针的类型定义
- 
+
 int index = 0;  //全局索引变量
 //二叉树构造器,按先序遍历顺序构造二叉树
 //无左子树或右子树用'#'表示
@@ -32,8 +38,8 @@ void depthFirstSearch(Tree root){
     nodeStack.push(root);
     Node *node;
     while(!nodeStack.empty()){
-	    node = nodeStack.top();
-		cout<<node->data;//遍历根结点
+        node = nodeStack.top();
+        cout<<node->data;//遍历根结点
         nodeStack.pop();
         if(node->rchild){
             nodeStack.push(node->rchild);  //先将右子树压栈
@@ -43,39 +49,61 @@ void depthFirstSearch(Tree root){
         }
     }
 }
- 
-//广度优先遍历
-void breadthFirstSearch(Tree root){
-    queue<Node *> nodeQueue;  //使用C++的STL标准模板库
-    nodeQueue.push(root);
-    Node *node;
-    while(!nodeQueue.empty()){
-        node = nodeQueue.front();
-        nodeQueue.pop();
-        cout<<node->data;//遍历根结点
-        if(node->lchild){
-            nodeQueue.push(node->lchild);  //先将左子树入队
-        }
-        if(node->rchild){
-            nodeQueue.push(node->rchild);  //再将右子树入队
-        }
+void DFS(Tree root){
+    stack<Node *> node_list;
+    node_list.push(root);
+    // stack 运算符.
+    while(!node_list.empty()){
+        Node* top = node_list.top();
+        cout << "DFS: " << top->data<<endl;;
+        node_list.pop();
+        // 指针运算符->
+        if(top->rchild)node_list.push(top->rchild);
+        if(top->lchild)node_list.push(top->lchild);
     }
 }
- 
+
+//广度优先遍历
+//void breadthFirstSearch(Tree root){
+//    queue<Node *> nodeQueue;  //使用C++的STL标准模板库
+//    nodeQueue.push(root);
+//    Node *node;
+//    while(!nodeQueue.empty()){
+//        node = nodeQueue.front();
+//        nodeQueue.pop();
+//        cout<<node->data;//遍历根结点
+//        if(node->lchild){
+//            nodeQueue.push(node->lchild);  //先将左子树入队
+//        }
+//        if(node->rchild){
+//            nodeQueue.push(node->rchild);  //再将右子树入队
+//        }
+//    }
+//}
+
+void BFS(Tree root){
+    //广度优先遍历, 使用队列
+    queue<Tree> node_list;
+    node_list.push(root);
+    while(!node_list.empty()){
+        Tree top = node_list.front();
+        node_list.pop();
+        cout << "BFS: "<< top->data<<endl;
+        if(top->lchild)node_list.push(top->lchild);
+        if(top->rchild)node_list.push(top->rchild);
+    }
+}
+
 int main() {
     //上图所示的二叉树先序遍历序列,其中用'#'表示结点无左子树或无右子树
     char data[15] = {'A', 'B', 'D', '#', '#', 'E', '#', '#', 'C', 'F','#', '#', 'G', '#', '#'};
     Tree tree;
     treeNodeConstructor(tree, data);
     printf("深度优先遍历二叉树结果: ");
-    depthFirstSearch(tree);
+    DFS(tree);
+    //depthFirstSearch(tree);
     printf("\n\n广度优先遍历二叉树结果: ");
-    breadthFirstSearch(tree);
+    BFS(tree);
+    //breadthFirstSearch(tree);
     return 0;
 }
-
-
-
-————————————————
-版权声明：本文为CSDN博主「mingwanganyu」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/mingwanganyu/article/details/72033122
