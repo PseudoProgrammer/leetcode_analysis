@@ -13,17 +13,46 @@ g++ tree.cc -o tree -std=c++11
 2. 执行
 ./tree
 3. 结果  
-深度优先遍历二叉树结果: DFS: A  
+深度优先遍历二叉树结果:  
+DFS: A  
 DFS: B  
 DFS: D  
 DFS: E  
 DFS: C  
 DFS: F  
 DFS: G  
-广度优先遍历二叉树结果: BFS: A  
+广度优先遍历二叉树结果:  
+BFS: A  
 BFS: B  
 BFS: C  
 BFS: D  
 BFS: E  
 BFS: F  
 BFS: G  
+前序优先遍历二叉树结果（递归）:  
+pre_order_recursive: A  
+pre_order_recursive: B  
+pre_order_recursive: D  
+pre_order_recursive: E  
+pre_order_recursive: C  
+pre_order_recursive: F  
+pre_order_recursive: G  
+中序优先遍历二叉树结果（递归）:  
+in_order_recursive: D  
+in_order_recursive: B  
+in_order_recursive: E  
+in_order_recursive: A  
+in_order_recursive: F  
+in_order_recursive: C  
+in_order_recursive: G  
+后序优先遍历二叉树结果（递归）:  
+post_order_recursive: D  
+post_order_recursive: E  
+post_order_recursive: B  
+post_order_recursive: F  
+post_order_recursive: G  
+post_order_recursive: C  
+post_order_recursive: A  
+所以，前序遍历其实就是深度优先遍历
+# Leetcode
+## 题
