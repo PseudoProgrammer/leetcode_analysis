@@ -48,6 +48,8 @@ public:
             if (queue_list.empty())return false;
             second = queue_list.front();
             queue_list.pop();
+            // NOTE 1, 叶子节点和非叶子节点，通常要区分对待
+            // NOTE 2, 空指针不能有left和right， 但空指针的形参可以用于树类型的实参
             // 3, 处理叶子节点
             if (first == NULL && second == NULL)continue;
             else if (first == NULL && second != NULL)return false;
