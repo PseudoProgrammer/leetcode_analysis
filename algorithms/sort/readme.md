@@ -1,0 +1,5 @@
+# 理论
+一篇博客上写的非常好，还有动态图演示，容易理解。十大经典排序算法（动图演示）见链接，https://www.cnblogs.com/onepixel/p/7674659.html
+# 特点及场景
+# Leetcode
+simple-
