@@ -3,5 +3,5 @@
 特别地，快排有个写的很好的博客，https://www.cnblogs.com/MOBIN/p/4681369.html
 # 特点及场景
 # Leetcode
-simple-
-medium-215-数组中的第K个最大元素
+## simple-242-有效的字母异位词
+## medium-215-数组中的第K个最大元素
