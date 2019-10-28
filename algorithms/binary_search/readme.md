@@ -3,3 +3,4 @@
 # 特点及场景
 # Leetcode
 ## simple-367-有效的完全平方数
+![image](https://github.com/PseudoProgrammer/leetcode_analysis/blob/PseudoProgrammer-patch-3/algorithms/binary_search/picture/Valid_Perfect_Square.png)
