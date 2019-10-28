@@ -13,9 +13,12 @@ public:
         // NOTE 1, 为了防止下面 (i + j) / 2对int范围越界，j != num，不影响结果
         int j = num - 1;
         // 2，迭代查找
+        int mid;
+        int div;
+        // NOTE 2, 为了防止死循环，不要写j > i, 比如num == 14的情况下，i，j会为3，4，一直跳不出while循环
         while (j > i + 1) {
-            int mid = (i + j) / 2;
-            int div = num / mid;
+            mid = (i + j) / 2;
+            div = num / mid;
             if (div > mid)i = mid;
             else if (div < mid)j = mid;
             else if (num % mid != 0)i= mid;
