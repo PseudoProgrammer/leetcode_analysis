@@ -10,3 +10,6 @@
 ## medium-215-数组中的第K个最大元素
 ## medium-148-排序链表
 ![image](https://github.com/PseudoProgrammer/leetcode_analysis/blob/PseudoProgrammer-patch-2/algorithms/sort/picture/Sort_List.png)
+## meidium-274-H指数
+![image](https://github.com/PseudoProgrammer/leetcode_analysis/blob/PseudoProgrammer-patch-2/algorithms/sort/picture/H_index.png)
+
