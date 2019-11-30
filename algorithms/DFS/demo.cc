@@ -42,6 +42,7 @@ void DFS(Tree root){
 
 void BFS(Tree root){
     //广度优先遍历, 使用队列
+    // NOTE 1， 时间复杂度o(n)，空间复杂度不是o(1)，而是o(logn),因为队列内存储的最大的情况是存储二叉树的全部叶子节点
     queue<Tree> node_list;
     node_list.push(root);
     while(!node_list.empty()){
